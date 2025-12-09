@@ -595,9 +595,234 @@ section {
     font-weight: 600;
 }
 
+/* ===== Resume Section ===== */
+.resume {
+    background-color: var(--bg-primary);
+}
+
+.resume-content {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.resume-card {
+    background-color: var(--bg-card);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    transition: var(--transition);
+}
+
+.resume-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.resume-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--gradient);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    font-size: 3rem;
+    color: white;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.resume-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.resume-card p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.resume-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.resume-buttons .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.resume-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.highlight-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.highlight-item span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* ===== Research & Writing Section ===== */
+.research {
+    background-color: var(--bg-secondary);
+}
+
+.subsection-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+}
+
+.subsection-title:first-of-type {
+    margin-top: 2rem;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.research-card {
+    display: flex;
+    gap: 2rem;
+    background-color: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    border-left: 4px solid transparent;
+}
+
+.research-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border-left-color: var(--primary-color);
+}
+
+.research-icon {
+    flex-shrink: 0;
+    width: 70px;
+    height: 70px;
+    background: var(--gradient);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.research-content {
+    flex: 1;
+}
+
+.research-type {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.research-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.research-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.research-meta i {
+    color: var(--primary-color);
+}
+
+.separator {
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+.research-description {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.research-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.research-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-small {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+}
+
 /* ===== Projects Section ===== */
 .projects {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
 }
 
 .project-filters {
@@ -928,6 +1153,26 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .resume-card {
+        padding: 2rem;
+    }
+
+    .resume-highlights {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .research-card {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .research-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
     .footer-content {
         flex-direction: column;
         text-align: center;
@@ -963,6 +1208,41 @@ section {
 
     .profile-image-placeholder {
         font-size: 5rem;
+    }
+
+    .resume-card {
+        padding: 1.5rem;
+    }
+
+    .resume-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+
+    .resume-buttons {
+        flex-direction: column;
+    }
+
+    .resume-buttons .btn {
+        width: 100%;
+    }
+
+    .research-card {
+        padding: 1.5rem;
+    }
+
+    .research-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .research-links {
+        flex-direction: column;
+    }
+
+    .research-links .btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 

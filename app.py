@@ -3,6 +3,9 @@ from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 from google import genai
 from pinecone import Pinecone
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app) # This allows your HTML file to access the Python API
@@ -12,10 +15,10 @@ def home():
     # Flask looks for this file inside a folder named "templates"
     return render_template('index.html')
 
-# Configuration (Best practice: use environment variables)
-GEMINI_KEY = "AIzaSyB9Ev0FxxjfxEwLrEBAnKDtfZqnph3WRzE" # Your key
-PINECONE_KEY = "pcsk_3zrs3o_SVjWtpS7gP34H6HSaSpX42bs14Emk3bhfafg83ukLc2SrizUyvgNyeRoG1o2UVe" # Your key
-PINECONE_HOST = "https://rista-portfolio-ulbt37p.svc.aped-4627-b74a.pinecone.io" # Your host
+
+GEMINI_KEY = os.environ.get("GEMINI_KEY")
+PINECONE_KEY = os.environ.get("PINECONE_KEY")
+PINECONE_HOST = os.environ.get("PINECONE_HOST")
 
 # Initialize Clients
 client = genai.Client(api_key=GEMINI_KEY)

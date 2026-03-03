@@ -5,10 +5,9 @@ from pinecone import Pinecone
 from ingest import process_documents # Reuses your Phase 1 code
 
 # 1. Setup Keys
-GEMINI_KEY = "AIzaSyB9Ev0FxxjfxEwLrEBAnKDtfZqnph3WRzE"
-PINECONE_KEY = "pcsk_3zrs3o_SVjWtpS7gP34H6HSaSpX42bs14Emk3bhfafg83ukLc2SrizUyvgNyeRoG1o2UVe"
-# Find this in your Pinecone dashboard under the 'rista-portfolio' index
-PINECONE_HOST = "https://rista-portfolio-ulbt37p.svc.aped-4627-b74a.pinecone.io"
+GEMINI_KEY = os.environ.get("GEMINI_KEY")
+PINECONE_KEY = os.environ.get("PINECONE_KEY")
+PINECONE_HOST = os.environ.get("PINECONE_HOST")
 
 # Initialize
 client = genai.Client(api_key=GEMINI_KEY)

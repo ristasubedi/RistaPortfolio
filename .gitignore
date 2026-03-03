@@ -29,3 +29,25 @@ Temporary Items
 *.swp
 *.swo
 *~
+
+#virtual env
+venv/
+__pycache__/
+*.pyc
+.env
+
+
+# Local secret files
+.env
+.flaskenv
+
+# Data and Logs
+*.log
+*.database
+raw_data/
+
+# Distribution / Build
+dist/
+build/
+*.egg-info/
+

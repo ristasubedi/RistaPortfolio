@@ -1,5 +1,6 @@
 flask
 flask-cors
 google-genai
-pinecone-client
+pinecone
 gunicorn
+python-dotenv
